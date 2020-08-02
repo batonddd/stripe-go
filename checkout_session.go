@@ -146,6 +146,7 @@ type CheckoutSessionSubscriptionDataParams struct {
 // For more details see https://stripe.com/docs/api/checkout/sessions/create
 type CheckoutSessionParams struct {
 	Params                    `form:"*"`
+	AllowPomotionCodes        *bool                                           `form:"allow_promotion_codes"`
 	BillingAddressCollection  *string                                         `form:"billing_address_collection"`
 	CancelURL                 *string                                         `form:"cancel_url"`
 	ClientReferenceID         *string                                         `form:"client_reference_id"`
@@ -232,6 +233,7 @@ type CheckoutSessionTotalDetails struct {
 // For more details see https://stripe.com/docs/api/checkout/sessions/object
 type CheckoutSession struct {
 	APIResource
+	AllowPomotionCodes        bool                                      `json:"allow_promotion_codes"`
 	CancelURL                 string                                    `json:"cancel_url"`
 	AmountSubtotal            int64                                     `json:"amount_subtotal"`
 	AmountTotal               int64                                     `json:"amount_total"`
